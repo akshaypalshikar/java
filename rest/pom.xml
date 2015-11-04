@@ -6,14 +6,40 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>rest</name>
-	<description>This is a project to test restful development</description>
-	<dependencies>
+	<description>This is a project to develop restful services for mongo db</description>
 
+	<properties>
+		<java.version>1.8</java.version>
+		<springframework.version>4.2.2.RELEASE</springframework.version>
+		<springframework.data.version>1.8.0.RELEASE</springframework.data.version>
+	</properties>
+
+
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
-			<version>1.8.0.RELEASE</version>
+			<version>${springframework.data.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.3</version>
+		</dependency>
 	</dependencies>
+
+
+	<!-- <repositories> <repository> <id>spring-releases</id> <url>https://repo.spring.io/libs-release</url> 
+		</repository> </repositories> <pluginRepositories> <pluginRepository> <id>spring-releases</id> 
+		<url>https://repo.spring.io/libs-release</url> </pluginRepository> </pluginRepositories> -->
 </project>
