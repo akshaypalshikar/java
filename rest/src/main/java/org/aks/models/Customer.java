@@ -4,33 +4,46 @@ import java.util.function.Consumer;
 
 import org.springframework.data.annotation.Id;
 
-
 public class Customer implements Consumer<Customer> {
 
-    @Id
-    private String id;
+	@Id
+	private String id;
 
-    private String firstName;
-    private String lastName;
+	private String firstName;
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public Customer() {}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Customer[id=%s, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	private String lastName;
+
+	public Customer() {
+	}
+
+	public Customer(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 
 	@Override
+	public String toString() {
+		return String.format("Customer[id=%s, firstName='%s', lastName='%s']", id, firstName, lastName);
+	}
+
 	public void accept(Customer t) {
-		System.out.println(t.toString());
+		System.out.println(this.toString());
+		
 	}
 
 }
-
