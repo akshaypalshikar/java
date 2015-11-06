@@ -33,7 +33,7 @@
 		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
 	</bean>
 
-	<bean name="customerController" class="org.aks.ctrls.CustomerController" />
+	
 	<bean name="customer" class="org.aks.models.Customer" />
 
 	<bean name="viewResolver"
